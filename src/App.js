@@ -1,12 +1,16 @@
 import React from 'react';
-import './App.css';
+import { BrowserRouter, Route } from 'react-router-dom';
+import Header from './components/layouts/Header';
+import Home from './components/pages/Home';
+import Profile from './components/pages/Profile';
 
 function App() {
 	return (
-		<div className="App">
-			<h3>Never Give Up</h3>
-			<a href="/auth/google">Sign Up Google</a>
-		</div>
+		<BrowserRouter>
+			<Header />
+			<Route exact path="/" component={Home} />
+			<Route path="/profile" component={Profile} />
+		</BrowserRouter>
 	);
 }
 
